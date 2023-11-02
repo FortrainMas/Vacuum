@@ -1,0 +1,21 @@
+.blockWrapper{
+ color: var(--clr-white);
+ border-radius: 8px;
+ overflow: hidden;
+    margin: 27px 41px;
+}
+
+.blockWrapper > header{
+    background-color: var(--clr-gray);
+    padding: 12px 24px;
+}
+
+.blockWrapper header h2{
+    text-align: start;
+    color: var(--clr-white);
+}
+
+.blockWrapper .content{
+    background-color: var(--clr-dark-gray);
+    padding: 12px 24px;
+}

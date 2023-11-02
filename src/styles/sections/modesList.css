@@ -1,0 +1,54 @@
+.modeListSectionWrapper header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.modeListSectionWrapper header button{
+    background: none;
+    outline: none;
+    border: none;
+}
+.modeListSectionWrapper .inputField{
+    color: var(--clr-white);
+    background: none;
+    border: none;
+    outline: none;
+}
+
+
+
+.modeListSectionWrapper .content .content-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+}
+
+.modeListSectionWrapper .content .content-block .dropdown{
+    margin-left: 10px;
+}
+
+
+.modeListSectionWrapper .content .sub-block{
+    margin-left: 70px;
+}
+
+
+.modeListSectionWrapper table{
+    width: 100%;
+    text-align: left;
+}
+.modeListSectionWrapper table tr{
+    padding: 1000px 0px;
+    font: var(--font-text);
+}
+.modeListSectionWrapper table td{
+    padding: 10px;
+    font: var(--font-text);
+}
+.modeListSectionWrapper table th{
+    padding: 25px 10px;
+    font: var(--font-text);
+    font-weight: 600;
+}

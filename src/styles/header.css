@@ -1,0 +1,30 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--clr-gray);
+    color: var(--clr-white);
+
+    padding: 0 25px;
+    height: 82px;
+
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.header .logo{
+    font: var(--font-logo);
+}
+
+.header .isRunning{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.header .isRunning p{
+    font: var(--font-header);
+    margin: unset;
+    margin-left: 5px;
+}

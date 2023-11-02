@@ -1,0 +1,40 @@
+.statusSectionWrapper .content .content-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+}
+
+.statusSectionWrapper .content .content-block .dropdown{
+    margin-left: 10px;
+}
+
+
+.statusSectionWrapper .content .sub-block{
+    margin-left: 70px;
+}
+
+.statusSectionWrapper .content-block h4{
+    font: var(--font-text)
+}
+
+
+.statusSectionWrapper .dropdown select{
+    background-color: var(--clr-gray);
+    color: var(--clr-white);
+    border: none;
+    outline: none;
+    font: var(--font-text);
+    width: 425px;
+    padding: 10px;
+}
+
+.statusSectionWrapper .dropdown select option{
+    background-color: var(--clr-gray);
+    color: var(--clr-white);
+    border: none;
+    outline: none;
+    font: var(--font-text);
+    width: 425px;
+    padding: 10px;
+}

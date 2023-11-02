@@ -1,0 +1,9 @@
+.modesWrapper{
+    margin-left: 78px;
+    background-color: var(--clr-dark-bg);
+    width: calc(100% - 78px);
+    min-height: 100vh;
+    padding-bottom: 70px;
+}
+
+

@@ -1,0 +1,76 @@
+.editingSecionCollapsableWrapper header button{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.editingSecionCollapsableWrapper header button img{
+    margin-left: 10px;
+}
+
+.editingSecionCollapsableWrapper .content-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+    margin: 15px 0;
+}
+.editingSecionCollapsableWrapper .small-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    margin-right: 50px;
+}
+.editingSecionCollapsableWrapper input{
+    background-color: var(--clr-gray);
+    color: var(--clr-white);
+    outline: none;
+    border: none;
+
+    font: var(--font-text);
+    padding-top: 7px;
+    margin: 0 10px;
+    width: 120px;
+    text-align: center;
+}
+
+.editingSecionCollapsableWrapper .phaseManagement{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end;
+    align-items: center;
+}
+
+
+.editingSecionCollapsableWrapper .content .content-block .dropdown{
+    margin-left: 10px;
+}
+
+
+
+.editingSecionCollapsableWrapper .content .sub-block{
+    margin-left: 70px;
+}
+
+.editingSecionCollapsableWrapper .content-block h4{
+    font: var(--font-text)
+}
+
+
+.editingSecionCollapsableWrapper .dropdown select{
+    background-color: var(--clr-gray);
+    color: var(--clr-white);
+    border: none;
+    outline: none;
+    font: var(--font-text);
+    padding: 10px;
+}
+
+.editingSecionCollapsableWrapper .dropdown select option{
+    background-color: var(--clr-gray);
+    color: var(--clr-white);
+    border: none;
+    outline: none;
+    font: var(--font-text);
+    padding: 10px;
+}

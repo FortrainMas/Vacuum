@@ -1,0 +1,35 @@
+.statusWrapper{
+    margin-left: 78px;
+    background-color: var(--clr-dark-bg);
+    width: calc(100% - 78px);
+    min-height: 100vh;
+    padding-bottom: 70px;
+}
+
+.statusWrapper .control_pannel{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: var(--clr-gray);
+}
+
+.statusWrapper > .control_pannel > button{
+    font: var(--font-control-button);
+    padding: 8px;
+    width: 260px;
+    margin: 12px;
+    color: var(--clr-white);
+    border-radius: 8px;
+    background-color: var(--clr-dark-gray);
+    border:none;
+
+}
+button:active{
+    opacity: 0.95;
+}
+
+.statusWrapper .control_pannel .button_start{
+    background-color: var(--clr-blue);
+}
+
+

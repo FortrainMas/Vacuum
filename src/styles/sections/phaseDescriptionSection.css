@@ -1,0 +1,33 @@
+.statusSectionWrapper .content .content-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+}
+
+.statusSectionWrapper .content .content-block .dropdown{
+    margin-left: 10px;
+}
+
+
+.statusSectionWrapper .content .sub-block{
+    margin-left: 70px;
+}
+
+
+.statusSectionWrapper table{
+    width: 100%;
+    border: 2px solid var(--clr-white);
+}
+.statusSectionWrapper table td{
+    border-left: 2px solid var(--clr-white);
+    border-right: 2px solid var(--clr-white);
+    padding: 20px;
+
+    font: var(--font-table);
+}
+.statusSectionWrapper table th{
+    padding: 10px;
+    border: 2px solid var(--clr-white);
+    font: var(--font-table-head);
+}
