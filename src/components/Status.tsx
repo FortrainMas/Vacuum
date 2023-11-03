@@ -8,6 +8,8 @@ import {observer} from 'mobx-react-lite';
 import statusStore from '../stores/statusStore';
 import appStateStore from '../stores/appStateStore';
 
+
+//Status page 
 const Status = observer(() => {
   return (
     <div className='statusWrapper'>

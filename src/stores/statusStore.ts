@@ -6,9 +6,14 @@ import defaultModes from '../utils/defaultModes';
 import appStateStore from './appStateStore';
 import { Process } from '../types/process';
 
+//It should be better in env probably
 const server = "http://localhost:3500";
 
 
+//Running - state of aspirator
+//Running mode - running mode
+//Modes - modes from api/v1/mode
+//Process - status of apsirator. Result of get(/api/v1/status)
 export interface Status{
     running: "running"|"paused"|"stopped",
     runningMode: Mode,
@@ -16,6 +21,8 @@ export interface Status{
     process: Process
 }
 
+
+//Store the logic of aspirator which is not attached to the app state.
 class StatusStore{
     status: Status = {
         running: "stopped",
@@ -46,6 +53,8 @@ class StatusStore{
         this.fetchCurrentState();
     }
 
+    //Fetch state of the aspirator every two seconds.\
+    //If running mode of the aspirator has been changed, function updates appStateStore runningMode
     fetchCurrentState(){
         axios.get(`${server}/api/v1/status`)
             .then(res=>{
@@ -63,6 +72,7 @@ class StatusStore{
         setTimeout(this.fetchCurrentState.bind(this), 2000);
     }
 
+    //Self-explanatory
     fetchModes(){
         axios.get(`${server}/api/v1/mode`)
             .then(res=>{
@@ -72,25 +82,32 @@ class StatusStore{
             })
     }
 
+    //Creates new mode on the server
     createMode(newMode: Mode){
         axios.post(`${server}/api/v1/mode`, newMode).then(()=>this.fetchModes());
     }
 
+    //Updates mode by id.
     updateMode(modeId: number, newMode: Mode){
         axios.put(`${server}/api/v1/mode/${modeId}`, newMode);
     }
 
+    //Deletes mode by id
     deleteMode(modeId: number){
         axios.delete(`${server}/api/v1/mode/${modeId}`)
     }
 
+    //Pause aspirator
     pause(){
         axios.post(`${server}/api/v1/control/pause`);
     }
+    //Starts aspirator with specified mode.
+    //This function is used in start button and there apply appStateStore.runningMode.id as an argument
     start(modeId: number){
         axios.post(`${server}/api/v1/mode/${modeId}/apply`);
         axios.post(`${server}/api/v1/control/start`);
     }
+    //Stopped 
     cancel(){
         axios.post(`${server}/api/v1/control/cancel`);
     }

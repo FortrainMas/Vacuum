@@ -8,6 +8,10 @@ import statusStore from '../../stores/statusStore';
 import appStateStore from '../../stores/appStateStore';
 import { Mode } from '../../types/mode';
 
+
+//Status of the aspirator basically
+//Also here new mode can be picked to appStateStore.modeRunning
+//Which is used to start with new mode applied after
 const StatusSection = observer(() => {
     return (
         <section className="blockWrapper statusSectionWrapper">

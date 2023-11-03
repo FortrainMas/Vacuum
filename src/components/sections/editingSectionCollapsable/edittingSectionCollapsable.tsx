@@ -9,7 +9,6 @@ import { observer } from 'mobx-react-lite';
 import '../../../styles/sections/edittingSectionCollapsable.css'
 
 import appStateStore from '../../../stores/appStateStore';
-import { Mode } from '../../../types/mode';
 import { Step } from '../../../types/step';
 
 
@@ -23,9 +22,13 @@ interface propsInterface{
     stepRemove: (stepId: number) => void,
     updateStep: (stepId:number, step:Step) => void
 }
+
+//The scariest part with largely copied code
+//It is better off splitted but was written this inefficient way
+//Phase description. With changing order, args for antiseptic, voltage and so on...
 const EditingSectionCollapsable = observer(({isEditable, step, stepId, isLast, stepUp, stepDown, stepRemove, updateStep}:propsInterface) => {
 
-
+    //Has one inner state. To check if phase collapsed or expanded. But works with different parrent states
     const [isCollapsed, setIsCollapsed] = useState(true);
     return (
         <section className="editingSecionCollapsableWrapper">

@@ -7,6 +7,9 @@ import statusStore from '../stores/statusStore';
 import { observer } from 'mobx-react-lite';
 
 
+
+//Modal windon
+//Start and cancel do the same 
 const Modal = observer(() => {
   return (
     <div className={`modal_container ${appStateStore.state.modal || 'inactive'}`}>

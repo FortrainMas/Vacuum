@@ -12,6 +12,7 @@ import statusStore from '../../stores/statusStore';
 import defaultModes from '../../utils/defaultModes';
 
 
+//Makes the line of table from mode
 const parseToTr = (mode: Mode, id: number) => {
     const name = mode.name;
     const phases = mode.steps.length.toString();
@@ -32,6 +33,7 @@ const parseToTr = (mode: Mode, id: number) => {
 } 
 
 
+//Table with modes. Content of modes page
 const ModesList = observer(() => {
     
     const [isAddingShown, setIsAddingShown] = useState(false);

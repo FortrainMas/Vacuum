@@ -1,14 +1,8 @@
-import { createContext } from 'react'
-import {v4 as uuidv4} from 'uuid'
-import axios from 'axios';
-import { runInAction, makeAutoObservable } from 'mobx';
+import { makeAutoObservable } from 'mobx';
 import { Mode } from '../types/mode';
-import { Process } from '../types/process';
 import defaultModes from '../utils/defaultModes';
 
 import statusStore from './statusStore';
-
-const server = "http://localhost:3500";
 
 
 //status - initial application page
@@ -18,9 +12,9 @@ type pageNames = "status"|"modes"|"edit"
 
 //State of the whole app
 //page - one of three application pages. 
-//modeRunning - initially the mode of aspirator but can be changed in the status page without aspirator state update
-//modes - all existing modes
+//modeRunning - initially the mode of aspirator and state of aspirator on update. Used to pick new aspirator mode to run
 //modifiedMode - mode which is open for examination or modification on the edit page.
+//modal - is modal window showed
 export interface State{
     page: pageNames,
     modeRunning: Mode,
@@ -28,7 +22,11 @@ export interface State{
     modal: Boolean
 }
 
+
+//Stores data attached to the app state and not attached to the aspirator.
 class StateStore{
+    
+    //Default app state.
     state: State = {
         page: "status",
         modeRunning: defaultModes[0],
@@ -40,24 +38,29 @@ class StateStore{
         makeAutoObservable(this);
     }
 
+    //Opens another page
     changePage(newPage: pageNames){
         this.state.page = newPage;
     }
 
-    //Updates running mode.
+
+    //Updates running mode. Used in dropdown on status page
     loadMode(id: number){
         this.state.modeRunning = statusStore.status.modes.find(mode => mode.id == id) || defaultModes[0];
     }
 
+    //Pcik the new mode for modification on the edit page.
     setModifiedMode(id: number){
         this.state.modifiedMode = statusStore.status.modes.find((mode: Mode) => mode.id == id) || defaultModes[0];
         this.changePage("edit");
     }
 
+    //Updates the modificating mode
     updateModifiedMode(update: Mode){
         this.state.modifiedMode = update;
     }
 
+    //Show or hide modal window
     toggleModal(){
         this.state.modal = !this.state.modal;
     }

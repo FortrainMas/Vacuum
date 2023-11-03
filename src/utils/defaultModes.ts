@@ -1,5 +1,6 @@
 import { Mode } from "../types/mode";
 
+//One default mode; Used for placeholder value, before data is fetched from the server
 const default1 : Mode= {
     "name": "default",
     "id": -1,

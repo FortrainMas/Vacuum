@@ -9,6 +9,8 @@ import stateStore from '../stores/appStateStore';
 import { observer } from 'mobx-react-lite';
 
 
+//Sidebar
+//I dont know how to comment its
 const Sidebar = observer(() => {
     return (
         <div className='sidebar'>
